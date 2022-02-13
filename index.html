@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/w3-custom.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <script src="webxdc.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="game"></div>
+            <div id="score">0</div>
+            <div id="instructions">Click (or press the spacebar) to place the block</div>
+            <div class="game-over">
+	        <h2>Game Over</h2>
+	        <p>You did great, you're the best.</p>
+	        <p>Click or spacebar to start again</p>
+            </div>
+            <div class="game-ready">
+                <div id="start-btn">Start</div>
+	        <div></div>
+            </div>
+        </div>
+        <audio id="music" src="assets/background.mp3" preload="auto" loop></audio>
+
+        <!-- Scoreboard Modal -->
+        <div id="scoreboard" class="w3-modal" onclick="event.stopPropagation();">
+            <div class="w3-modal-content w3-animate-top" onclick="event.stopPropagation();">
+
+                <header class="w3-container w3-black">
+                    <h2>Scoreboard
+                        <span onclick="document.getElementById('scoreboard').style.display='none'"
+                              class="w3-button w3-display-topright">&times;</span>
+                    </h2>
+                </header>
+
+                <div id="scoreboard-container" class="w3-container"></div>
+            </div>
+        </div>
+
+        <svg id="score-btn" onclick="showScoreboard();" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 15.9C15.2822 15.4367 17 13.419 17 11V4H7V11C7 13.419 8.71776 15.4367 11 15.9V18H9V20H15V18H13V15.9ZM9 6H15V11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11V6Z" fill="currentColor" /><path d="M18 6H20V11H18V6Z" fill="currentColor" /><path d="M6 6H4V11H6V6Z" fill="currentColor" /></svg>
+
+        <footer id="footer">v0.1</footer>
+
+        <script src="js/three.min.js"></script>
+        <script src="js/TweenMax.min.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/index.js"></script>
+
+        <!-- debugging -->
+        <script src="eruda.min.js"></script>
+        <script>eruda.init();</script>
+    </body>
+</html>
