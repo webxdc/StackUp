@@ -6,7 +6,7 @@ body{margin:0}
 header{display:block}
 canvas{display:inline-block}
 [hidden]{display:none}
-body,html{font-family:Courier,Verdana,sans-serif;font-size:15px;line-height:1.5}
+body,html{font-size:15px;line-height:1.5}
 html{overflow-x:hidden}
 h2{font-size:30px;font-weight:400;margin:10px 0}
 .w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}

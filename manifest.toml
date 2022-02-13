@@ -2,8 +2,8 @@ name = "StackUp!"
 
 [store]
 id="com.github.adbenitez.StackUp"
-version_name=0.1
-version_code=1
+version_name=0.2
+version_code=2
 author="adbenitez"
 author_email="adbenitez@nauta.cu"
 description="Tower building game. Place blocks by clicking, tapping or pressing the spacebar"
