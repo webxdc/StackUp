@@ -18,7 +18,7 @@ onload = () => {
     window.webxdc.getAllUpdates().then((updates) => {
         updates.forEach(receiveOldUpdate);
         game = new Game();
-        if (updates.length > 0) {
+        if (updates.length) {
             document.getElementById('score-btn').style.display='block';
         }
     });
