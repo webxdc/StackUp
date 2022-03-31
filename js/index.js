@@ -1,27 +1,15 @@
 let game;
 
-receiveUpdate = (update) => {
-    const player = update.payload;
-    updateHighscore(player.addr, player.name, player.score);
-    if (!update.old) {
-        document.getElementById('score-btn').style.display='block';
-    }
-};
-
-receiveOldUpdate = (update) => {
-    update.old = true;
-    receiveUpdate(update);
-};
-
 onload = () => {
-    window.webxdc.setUpdateListener(receiveUpdate);
-    window.webxdc.getAllUpdates().then((updates) => {
-        updates.forEach(receiveOldUpdate);
-        game = new Game();
-        if (updates.length) {
-            document.getElementById('score-btn').style.display='block';
+    game = new Game();
+    let scoreBtn = document.getElementById('score-btn');
+    window.webxdc.setUpdateListener((update) => {
+        const player = update.payload;
+        updateHighscore(player.addr, player.name, player.score);
+        if (update.serial === update.max_serial) {
+            scoreBtn.style.display = 'block';
         }
-    });
+    }, 0);
 }
 
 showScoreboard = () => {
